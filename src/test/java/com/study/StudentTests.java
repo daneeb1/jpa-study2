@@ -1,9 +1,6 @@
 package com.study;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -33,5 +30,15 @@ public class StudentTests {
     @AfterAll
     public static void closeFactory(){
         entityManagerFactory.close();
+    }
+
+    @Test
+    public void test(){
+        Student student = new Student();
+        student.name("소임");
+        student.phone("010-3434-3434");
+        student.address("김포");
+
+        entityManager.persist(student);
     }
 }

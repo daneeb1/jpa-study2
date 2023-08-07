@@ -30,6 +30,20 @@ public class Grades {
         this.score = score;
     }
 
+    public Grades semester(String semester){
+        this.semester = semester;
+        return this;
+    }
+
+    public Grades score(int score){
+        this.score = score;
+        return this;
+    }
+
+    public Grades builder(){
+        return new Grades(gradesPk, course, student, semester, score);
+    }
+
     public GradesPk getGradesPk() {
         return gradesPk;
     }
@@ -70,14 +84,5 @@ public class Grades {
         this.score = score;
     }
 
-    @Override
-    public String toString() {
-        return "Grades{" +
-                "gradesPk=" + gradesPk +
-                ", course=" + course +
-                ", student=" + student +
-                ", semester='" + semester + '\'' +
-                ", score=" + score +
-                '}';
-    }
+
 }

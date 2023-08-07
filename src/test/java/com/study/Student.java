@@ -31,6 +31,29 @@ public class Student {
         this.gradesList = gradesList;
     }
 
+    public Student stuCode(int stuCode){
+        this.stuCode = stuCode;
+        return this;
+    }
+    public Student name(String name){
+        this.name = name;
+        return this;
+    }
+
+    public Student phone(String phone){
+        this.phone = phone;
+        return this;
+    }
+
+    public Student address(String address){
+        this.address = address;
+        return this;
+    }
+
+    public Student builder(){
+        return new Student(stuCode, name, phone, address, gradesList);
+    }
+
     public int getStuCode() {
         return stuCode;
     }
